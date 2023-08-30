@@ -133,7 +133,7 @@ public enum NavigationApp: Int, CaseIterable, CustomStringConvertible {
     public var canOpen: Bool { NavigationApp.canOpen(self) }
     
     /// A list of all the installed navigation apps on the users device
-    public var installedNavigationApps: [NavigationApp] { NavigationApp.allCases.filter { $0.canOpen } }
+    public static var installedNavigationApps: [NavigationApp] { NavigationApp.allCases.filter { $0.canOpen } }
     
     /// Will build the full url to open the navigation app with the passed in `options`
     /// - Parameter options: The options which should be used to build the navigation app url
