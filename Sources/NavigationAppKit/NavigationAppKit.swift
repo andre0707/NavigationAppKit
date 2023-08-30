@@ -44,7 +44,7 @@ import UIKit
 /// Not every navigation app supports all functionalities. Errors will be thrown, if something is not supported.
 /// Make sure to use the correct options if an error is thrown.
 ///
-public enum NavigationApp: Int, CaseIterable, CustomStringConvertible {
+public enum NavigationApp: Int, CaseIterable, CustomStringConvertible, Identifiable {
     case appleMaps = 0
     case googleMaps // https://developers.google.com/maps/documentation/ios/urlscheme
     case organicMaps // https://omaps.app/api
@@ -54,8 +54,10 @@ public enum NavigationApp: Int, CaseIterable, CustomStringConvertible {
     case hereWeGo //https://stackoverflow.com/questions/13514532/launch-nokia-here-maps-ios-via-api
     case navigon
     
-    /// The description of the app is the name of the app
+    /// Conformence to `CustomStringConvertible` protocol.
     public var description: String { name }
+    /// Conformence to `Identifiable` protocol.
+    public var id: Int { rawValue }
     
     /// The name of the navigation app
     public var name: String {
