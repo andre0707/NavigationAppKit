@@ -141,7 +141,7 @@ public enum NavigationApp: Int, CaseIterable, CustomStringConvertible, Identifia
     /// - Parameter options: The options which should be used to build the navigation app url
     /// - Returns: The full url to the navigation app, if available.
     /// It can throw if `options` are not valid for the picked navigation app
-    func buildFullUrl(with options: Options) throws -> URL? {
+    public func buildFullUrl(with options: Options) throws -> URL? {
         switch self {
         case .appleMaps:
             return nil //Will be handled with internal API, so a url is not needed here. But could look like this: URL(string: "\(urlScheme(for: options.navigationMode))?q=\(options.location.latitude.stringFormatted),\(options.location.longitude.stringFormatted)")
